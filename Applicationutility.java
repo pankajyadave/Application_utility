@@ -1,4 +1,4 @@
-package ApplicationUtility;
+package Application_Utility;
 
 import java.awt.Robot;
 import java.awt.Toolkit;
@@ -12,9 +12,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-import BaseLibrary.BaseLibrary;
 
-public class Applicationutility extends BaseLibrary
+import Base_Library.Base_library;
+
+public class Application_utility extends Base_library
 {
 	static Actions act=new Actions(driver);
 	public static void getscrollbyxpath(WebElement ele)
@@ -24,7 +25,7 @@ public class Applicationutility extends BaseLibrary
 			js.executeScript("arguments[0].scrollIntoView(true)", ele);
 			
 		} catch (Exception e) {
-			System.out.println("Issue in getscrollbyxpath"+e);
+			System.out.println("Issue in getscrollbyxpath "+e);
 		}
 	}
 	public static void Doubleclick(WebElement ele)
@@ -96,6 +97,16 @@ public class Applicationutility extends BaseLibrary
 			sel.selectByValue(value);
 		} catch (Exception e) {
 			System.out.println("Issue in DropdownSelectByValue "+e);
+		}
+	}
+	public static void Dot_Click_Using_JavascriptExecutor(WebElement ele)
+	{
+		try {
+			JavascriptExecutor jse = (JavascriptExecutor)driver;
+			jse.executeScript("arguments[0].click()", ele);
+			
+		} catch (Exception e) {
+			System.out.println("Issue in Dot_Click_Using_JavascriptExecutor "+e);
 		}
 	}
 }
