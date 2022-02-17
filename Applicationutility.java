@@ -79,25 +79,35 @@ public class Application_utility extends Base_library
 			System.out.println("Issue in UploadFile "+e);
 		}
 	}
-	public static void DropdownSelectByText(WebElement ele,String value)
+	public static void DropdownSelectByVisibleText(WebElement ele,String value)
 	{
 		try
 		{
 			Select sel=new Select(ele);
 			sel.selectByVisibleText(value);		
 		} catch (Exception e) {
-			System.out.println("Issue in DropdownSelectByText "+e);
+			System.out.println("Issue in DropdownSelectByVisibleText "+e);
 		}
 	}
-	public static void DropdownSelectByValue(WebElement ele,String value)
+	public static void DropdownSelectByValueAttribute(WebElement ele,String value)
 	{
 		try
 		{
 			Select sel=new Select(ele);
 			sel.selectByValue(value);
 		} catch (Exception e) {
-			System.out.println("Issue in DropdownSelectByValue "+e);
+			System.out.println("Issue in DropdownSelectByValueAttribute "+e);
 		}
+	}
+	public static void DropdownSelectByIndex(WebElement ele, int indexing_number)
+	{
+		try {
+			Select sel=new Select(ele);
+			sel.selectByIndex(indexing_number);
+		} catch (Exception e) {
+			System.out.println("Issue in DropdownSelectByIndex "+e);
+		}
+		
 	}
 	public static void Dot_Click_Using_JavascriptExecutor(WebElement ele)
 	{
