@@ -28,6 +28,16 @@ public class Application_utility extends Base_library
 			System.out.println("Issue in getscrollbyxpath "+e);
 		}
 	}
+	public static void GetScrollByJavaScript(String scrollvalueInPixel)
+	{
+		try {
+			String scrollvalueInPixel_Can_Be="scroll(0,500)";
+			((JavascriptExecutor)driver).executeScript(scrollvalueInPixel);
+			
+		} catch (Exception e) {
+			System.out.println("Issue in GetScrollByJavaScript "+e);
+		}
+	}
 	public static void Doubleclick(WebElement ele)
 	{
 		try
